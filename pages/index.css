@@ -1,107 +1,16 @@
-.page {
-  min-width: 1100px;
-  max-width: 1600px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 20px;
-  margin: 0 auto;
+@keyframes about__circle_animation_blurred: pulsate {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
 }
 
-.header {
-  background-image: url(/images/background_header.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  padding: 30px 80px 40px;
-  min-height: 720px;
-  max-height: 800px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-}
-
-.nav__logo {
-  position: relative;
-  left: -50px;
-  width: 105px;
-  height: 39px;
-}
-
-.nav__links {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  gap: 20px;
-  list-style-type: none;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-}
-
-.header__title {
-  max-width: 729px;
-  font-size: 60px;
-  line-height: 72px;
-  margin: 183px 0 0;
-  letter-spacing: -0.6px;
-  font-weight: 500;
-  font-family: "Inter";
-  font-style: normal;
-  z-index: 2;
-}
-
-.header__description {
-  max-width: 683px;
-  font-size: 20px;
-  line-height: 30px;
-  margin: 28px 0 0;
-  font-family: "Noto Serif";
-  font-style: normal;
-  font-weight: normal;
-}
-
-.header__span-accent {
-  display: block;
-  font-family: "Noto Serif";
-  font-style: italic;
-  font-weight: normal;
-  font-size: 60px;
-  line-height: 72px;
-  color: #2f80ed;
-}
-
-.header__image {
-  z-index: 1;
-  position: absolute;
-  margin-top: 124px;
-  right: 5px;
-  width: 646px;
-  height: 568px;
-}
-
-.nav__link {
-  color: #000;
-  text-decoration: none;
-}
-
-.header__footer {
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-  margin-top: auto;
-}
-
-.header__paragraph {
-  margin: 0;
-}
+@import url(../vendor/normalize.css);
+@import url(../blocks/page.css);
+@import url(../blocks/header.css);
 
 .recipes {
   padding: 100px 80px 215px;
@@ -260,5 +169,131 @@ form {
   transition: opacity 0.2s ease-in-out;
 }
 
-.footer {
+.menu {
+  background-image: url(/images/background_menu.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 100px 0 100px;
+}
+
+.menu__title {
+  text-align: center;
+  margin: 0 0 24px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 52px;
+}
+
+.menu__subtitle {
+  text-align: center;
+  margin: 0 0 100px;
+  font-family: "Noto Serif";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.menu__cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 100px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.card {
+  width: 540px;
+}
+
+.card__title {
+  margin: 0 0 32px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.card__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Noto Serif";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.card__list-item {
+  display: flex;
+  margin: 16px 0 0;
+}
+
+.card__list-divider {
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-grow: 1;
+}
+
+.about {
+  display: flex;
+  background-color: #0a2850;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.about__title {
+  max-width: 251px;
+  margin: 100px 0 0 80px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 52px;
+  color: #fff;
+  z-index: 1;
+}
+
+.about__content {
+  list-style-type: none;
+  max-width: 660px;
+  margin: 119px 80px 173px auto;
+  padding: 0;
+}
+
+.about__paragraph {
+  margin: 0 0 20px;
+  font-family: "Noto Serif";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  color: #fff;
+}
+
+.about__paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.about__circle {
+  border-radius: 50%;
+  display: inline-block;
+  height: 426px;
+  width: 426px;
+  background-color: #2f80ed;
+  position: absolute;
+  top: -152px;
+  left: -129px;
+}
+
+.about__circle_animation_blurred {
+  animation: pulsate 1.3s infinite ease-in-out no-delay;
 }
