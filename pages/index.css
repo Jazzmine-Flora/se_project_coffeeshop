@@ -1,16 +1,21 @@
-@keyframes about__circle_animation_blurred: pulsate {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.6;
-  }
-}
-
 @import url(../vendor/normalize.css);
 @import url(../blocks/page.css);
 @import url(../blocks/header.css);
+
+@keyframes pulsate {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
 
 .recipes {
   padding: 100px 80px 215px;
@@ -295,5 +300,5 @@ form {
 }
 
 .about__circle_animation_blurred {
-  animation: pulsate 1.3s infinite ease-in-out no-delay;
+  animation: pulsate 1.3s ease-in-out infinite;
 }
